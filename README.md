@@ -12,7 +12,7 @@
 
 ## CS
 ### 📌 컴퓨터구조
-- 컴퓨터의 기본 구조
+- [컴퓨터의 기본 구조](https://github.com/hdaisywd/CS-Study/tree/main/Computer-Architecture/Introduction-to-Computer-Architecture)
 - CPU의 구조와 기능
 - 컴퓨터 산술과 논리 연산
 - 제어 유니트
