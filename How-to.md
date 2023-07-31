@@ -14,8 +14,7 @@ ex) 첫째주는 Computer-Architeture > Introduction-to-Computer-Architecture �
 
 [마크다운 형식으로 글 쓰는 법](https://gist.github.com/ihoneymon/652be052a0727ad59601) <- 요 링크를 확인해주세요. <br>
 그런데 이때 주의해야 할 것: toc기능이 있는 마크다운 글로 만들어주세요! (글이 길어지면 읽기가 힘듭니다 ㅠㅠ!) 
-[형식을 어떻게 쓰는지에 대해서는 이 링크](https://kyeoneee.tistory.com/56)에 나와있습니다. 아래에 예시 사진도 남겨드리겠습니다. 
-<img width="651" alt="Screenshot 2023-07-31 at 10 13 20 PM" src="https://github.com/hdaisywd/CS-Study/assets/102342953/5eb26c88-56fc-4ed2-9c5d-4eff89d226c9">
+[형식을 어떻게 쓰는지에 대해서는 이 링크](https://kyeoneee.tistory.com/56)에 나와있습니다. 
 검색해봐도 모르겠다! 하시면 제가 써놓은 첫 글의 왼쪽 상단에 있는 code를 눌러서 raw code를 확인해주세요. 그냥 긁어가서 내용만 수정하셔도 좋습니다 XD
 <img width="881" alt="Screenshot 2023-07-31 at 10 15 54 PM" src="https://github.com/hdaisywd/CS-Study/assets/102342953/a69f1a04-26fa-42ad-9d55-5c70cc7fd72c">
 
