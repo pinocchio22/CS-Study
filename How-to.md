@@ -2,13 +2,13 @@
 
 1. 이번주 공부에 맞는 디렉토리를 들어간다 
 
-ex) 첫째주는 Computer-Architeture > Introduction-to-Computer-Architecture 입니다! 
+ex) 첫째주는 Computer-Architeture > Introduction-to-Computer-Architecture 입니다! 그 후, 각자 브랜치를 파서 각자의 브랜치에 글을 작성해주세요. 매주 돌아가며 팀원분의 글을 메인으로 푸쉬하려고 합니다 ㅎㅎ 
 
 2. md 확장자의 파일을 만든다 
 
 <img width="190" alt="image" src="https://github.com/hdaisywd/CS-Study/assets/102342953/7bf8787c-2d26-4722-be2a-72771568f056">
 
-이렇게 vsc에서 .md로 끝나는 파일을 만들어주시면 됩니다! 본인의 이름을 딴 파일로 만들어주세요. 저는 Dahee.md로 만들었습니다. 
+이렇게 vsc에서 .md로 끝나는 파일을 만들어주시면 됩니다! 본인의 이름을 딴 파일로 만들어주세요. 저는 Dahee.md로 만들었습니다. (예시를 위해 이번만 제 글을 메인으로 푸쉬해 두었습니다.)
 
 3. 주제에 맞는 글을 작성한다 
 
