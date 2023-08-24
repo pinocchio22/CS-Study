@@ -92,4 +92,5 @@
 🌿 [이동준](https://github.com/Madman-dev) <br>
 💪 [김기현](https://github.com/zzangzzangguy) <br>
 💯 [한지욱](https://github.com/z-wook) <br>
-❤️ [김은경](https://github.com/Luna828)  
+❤️ [김은경](https://github.com/Luna828) <br>
+🐴 [김지은](https://github.com/jingni1115)
