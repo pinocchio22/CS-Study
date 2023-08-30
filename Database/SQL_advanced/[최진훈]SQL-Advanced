@@ -1,0 +1,185 @@
+# 목차 
+[1. SUBQUERY](#1-SUBQUERY) <br>
+[2. 내장 함수](#2-내장-함수) <br>
+[3. NULL](#3-NULL) <br>
+
+# 1. SUBQUERY
+
+##  메인 쿼리와 서브 쿼리
+### 메인 쿼리
+* 외부 질의를 의미
+* 서브 쿼리가 반환한 값을 이용해서 메인 쿼리가 완성
+
+### 서브 쿼리
+* 내부 질의(내부 SELECT 문, 중첩된 SELECT 문)를 의미
+* 메인 쿼리에서 사용할 값을 반환
+* 하나의 SQL 문 안에 포함되어 있는 또 다른 SQL문
+
+## 서브 쿼리의 사용
+* 검색하고자 하는 자료의 형태 및 유무, 자료의 양 등의 조건에 따라 상황에 맞게 사용
+* 잘못 사용할 경우 성능에 나쁜 영향을 줄 수 있으므로 주의를 요함 (예시)
+
+### SELECT - 스칼라 서브쿼리
+* 열이 SELECT의 결과로 쓰임
+* 코드, 계산 등에 사용
+
+```swift
+SELECT 고객명, 지역, 
+        (SELECT SUM(금액)
+         FROM 주문
+         WHERE 주문.고객번호=고객.고객번호) AS 구매액
+FROM 고객
+WHERE 직업='학생';
+
+고객 테이블에서 학생이라는 직업을 가진 고객들을 정보를
+가져오면 주문테이블에서 각 고객들의 구매액을 보여줌
+```
+
+### FROM - 인라인 서브쿼리
+* 1차 가공하여 테이블을 결과로 보여주고 그 결과를 대상으로 쿼리를 할 때 사용
+
+```swift
+SELECT *
+FROM customer,
+    (SELECT custid AS cid,
+            SUM(saleprice) AS samt
+     FROM orders
+     GROUP BY custid) csales
+WHERE customer.custid = csales.cid
+
+고객별 주문 내역 출력
+```
+
+### WHERE - 서브쿼리
+* WHERE 절에 타 테이블을 조건으로 공급
+* 서브쿼리로 공급될 결과 집합의 컬럼이 메인 쿼리의 조건에 기술된 타입, 수 등이 동일해야 함
+
+```swift
+SELECT *
+FROM 주문
+WHERE 고객번호 IN ( SELECT 고객번호
+                  FROM 고객
+                  WHERE 지역='제주도‘ );
+
+고객 테이블에서 '제주도'에 거주하는 고객의 고객번호를 가져와서 주문 테이블에서
+주문내역을 가져옴
+```
+
+# 2. 내장 함수
+## 문자열 함수
+### Ascii()
+* 문자열의 제일 왼쪽 문자의 아스키 코드 값을 반환(Integer)
+
+```swift
+SELECT ASCII ('abcd')
+
+결과: 97
+```
+
+### Char()
+* 정수 아스키 코드를 문자로 반환(Char)
+
+```swift
+SELECT CHAR(97)
+
+결과: a
+```
+
+### Charindex()
+* 문자열에서 지정한 식의 위치를 반환
+
+```swift
+SELECT Charindex('b','abcde')
+
+결과: 2
+```
+
+### Difference()
+* 두 문자식에 SUONDEX 값 간의 차이를 정수로 반환
+
+```swift
+SELECT Difference('a','b')
+
+결과: 3
+```
+
+### Left()
+* 문자열에서 왼쪽에서부터 지정한 수만큼의 문자를 반환
+### Len()
+* 문자열의 길이 반환
+### Lower()
+* 대문자를 소문자로 반환
+
+```swift
+SELECT Left('abced','3')
+SELECT Len('abced')
+SELECT Lower('ABCDE')
+
+결과: abc
+결과: 5
+결과: abcde
+```
+
+### Replace()
+* 문자열에서 바꾸고 싶은 문자 다른 문자로 변환
+### Reverse()
+* 문자열을 역순으로 출력
+### Space()
+* 지정한 수만큼의 공백 문자 반환
+### Substring()
+* 문자, 이진, 텍스트 또는 이미지 식의 일부를 반환
+
+```swift
+SELECT Replace('abcde', 'a', '1')
+SELECT Reverse('abcde')
+SELECT Space(10)
+SELECT Substring('abcde', 2, 3)
+
+결과: 1bcde
+결과: edcba
+결과: '          '
+결과: bcd
+```
+
+## 날짜 및 시간함수
+### getdate()
+* 오늘 날짜를 반환(datetime)
+### Datename()
+* 지정한 날짜의 특정 날짜부분을 나타내는 문자열을 반환
+### Day()
+* 지정한 날짜에 일 부분을 나타내는 정수를 반환 (Month, Year 동일)
+
+```swift
+SELECT GETDATE()
+SELECT Detaname(d, getdate())
+SELECT Day(getdate())
+
+결과: 2012-01-06 16:39:09:620
+결과: 6
+결과: 6
+```
+
+## 기타 함수
+### Isnumeric()
+* 해당 문자열이 숫자형이면 1 아니면 0을 반환
+### Isdate()
+* 해당 문자열이 Datetime이면 1 아니면 0
+
+```swift
+SELECT Isnumeric('30')
+SELECT Isnumeric('f2')
+SELECT Isdate('20231231')
+SELECT Isdate('aa')
+
+결과: 1
+결과: 0
+결과: 1
+결과: 0
+```
+
+# 3. NULL
+* 아직 지정되지 않음
+* 값을 알 수 없음
+* 값을 적용 할 수 없음
+* null은 공백과 같지 않음
+* null은 0이 아님
