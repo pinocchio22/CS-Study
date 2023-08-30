@@ -26,7 +26,7 @@
 * where: 튜플 필터링 조건
 
 <br>
-사진
+<img width="762" alt="image" src="https://github.com/pinocchio22/CS-Study/assets/61182499/afdb9c6e-f8dd-432c-bb24-7798d70d87f3">
 <br>
 
 # 3. SUBQUERY
