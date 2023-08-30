@@ -1,8 +1,8 @@
 # 목차 
 [1. DDL](#1-DDL) <br>
 [2. DML](#2-DML) <br>
-[3. SUBQUERY](#3-SUBQUERY) <b
-[4. Join](#4-Join) <br>r>
+[3. SUBQUERY](#3-SUBQUERY) <br>
+[4. Join](#4-Join) <br>
 [5. 내장 함수](#5-내장-함수) <br>
 [6. NULL](#6-NULL) <br>
 
