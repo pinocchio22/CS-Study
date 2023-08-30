@@ -1,10 +1,35 @@
 # 목차 
-[1. SUBQUERY](#1-SUBQUERY) <br>
-[2. 내장 함수](#2-내장-함수) <br>
-[3. NULL](#3-NULL) <br>
+[1. DDL](#1-DDL) <br>
+[2. DML](#2-DML) <br>
+[3. SUBQUERY](#3-SUBQUERY) <b
+[4. Join](#4-Join) <br>r>
+[5. 내장 함수](#5-내장-함수) <br>
+[6. NULL](#6-NULL) <br>
 
-# 1. SUBQUERY
 
+# 1. DDL(Data-Definition Language)
+* 스키마를 정의 / 수정 / 삭제할 때 사용
+## 테이블 생성
+* create table 테이블명
+* primary key - 기본키로 지정
+* foreign key - 외래키로 지정
+
+## 테이블 삭제/수정
+* drop table 테이블명 - relation과 내부 튜플 모두 삭제
+* delete from 테이블명 - relation은 보존하고 내부 튜플만 삭제
+* alter table 테이블명 add 어트리뷰트 도메인 - Attribute 추가
+
+# 2. DML(Data-Manipulation Language)
+* 데이터를 검색/삽입/삭제/수정할 떄 사용
+* select: 알고자 하는 Attribute 리스트
+* from: 출처 Relation 리스트
+* where: 튜플 필터링 조건
+
+<br>
+사진
+<br>
+
+# 3. SUBQUERY
 ##  메인 쿼리와 서브 쿼리
 ### 메인 쿼리
 * 외부 질의를 의미
@@ -20,8 +45,16 @@
 * 잘못 사용할 경우 성능에 나쁜 영향을 줄 수 있으므로 주의를 요함 (예시)
 
 ### SELECT - 스칼라 서브쿼리
-* 열이 SELECT의 결과로 쓰임
+* 결과를 알고자하는 Attribute 리스트를 명시
 * 코드, 계산 등에 사용
+#### select / select all
+* 중복을 허용하는 일반적인 select
+#### select distinct
+* 중복을 제거하는 select
+#### select *
+* 모든 Attribute. 즉, 테이블을 그대로 원하는 경우
+#### select 사칙연산
+* Attribute 값에 산술연산을 가미한 결과를 얻고 싶은 경우
 
 ```swift
 SELECT 고객명, 지역, 
@@ -37,6 +70,7 @@ WHERE 직업='학생';
 
 ### FROM - 인라인 서브쿼리
 * 1차 가공하여 테이블을 결과로 보여주고 그 결과를 대상으로 쿼리를 할 때 사용
+* 대상 Relation을 명시
 
 ```swift
 SELECT *
@@ -51,7 +85,8 @@ WHERE customer.custid = csales.cid
 ```
 
 ### WHERE - 서브쿼리
-* WHERE 절에 타 테이블을 조건으로 공급
+* 튜플 필터링 조건을 명시
+* and / or / not과 같은 논리 연산자 사용 가능
 * 서브쿼리로 공급될 결과 집합의 컬럼이 메인 쿼리의 조건에 기술된 타입, 수 등이 동일해야 함
 
 ```swift
@@ -65,41 +100,40 @@ WHERE 고객번호 IN ( SELECT 고객번호
 주문내역을 가져옴
 ```
 
-# 2. 내장 함수
+# 4. Join 
+* SQL에서 두 개 이상의 Relation을 함께 사용하여 원하는 데이터를 얻는 방법
+
+join의 종류
+
+## Aggregate Functions
+### Group By
+* 테이블에서 특정 Attribute의 값이 같은 튜플들을 모아 그룹을 만들고, 그렇게 만들어진 각 그룹별로 검색을 하는 기능
+* 여러 튜플 집합으로 나누어 각각의 결과를 알고 싶을 때 사용
+
+### Having
+* group by를 사용할 때 having절을 사용
+* group by로 만들어진 그룹에 대한 조건을 명시
+
+# 5. 내장 함수
 ## 문자열 함수
 ### Ascii()
 * 문자열의 제일 왼쪽 문자의 아스키 코드 값을 반환(Integer)
-
-```swift
-SELECT ASCII ('abcd')
-
-결과: 97
-```
-
 ### Char()
 * 정수 아스키 코드를 문자로 반환(Char)
-
-```swift
-SELECT CHAR(97)
-
-결과: a
-```
-
 ### Charindex()
 * 문자열에서 지정한 식의 위치를 반환
-
-```swift
-SELECT Charindex('b','abcde')
-
-결과: 2
-```
-
 ### Difference()
 * 두 문자식에 SUONDEX 값 간의 차이를 정수로 반환
 
 ```swift
+SELECT ASCII ('abcd')
+SELECT CHAR(97)
+SELECT Charindex('b','abcde')
 SELECT Difference('a','b')
 
+결과: 97
+결과: a
+결과: 2
 결과: 3
 ```
 
@@ -177,7 +211,7 @@ SELECT Isdate('aa')
 결과: 0
 ```
 
-# 3. NULL
+# 6. NULL
 * 아직 지정되지 않음
 * 값을 알 수 없음
 * 값을 적용 할 수 없음
