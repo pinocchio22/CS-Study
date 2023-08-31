@@ -77,6 +77,8 @@ Upgrade-Insecure-Requests: 1
 서버에서 데이터를 받아 클라이언트로 뿌려질 때를 응답이라 한다.
 결국 HTTP는 양방향으로 메시지가 보내지는 것이라는 점!
 
+- 관련 내용은 후술
+
 ### <U>4. 웹 서버</U>
 <img src="asset/웹 서버.png" width="400">
 
@@ -125,8 +127,20 @@ HTTP 응답을 할 때 해당 데이터를 넘기는 동시에 WAS에게 구성�
 - **JavaScript**<br/>
 해당 Component들에 대한 로직을 구성한다고 한다.<br/>
 다른 말로 서버에서 초기 웹 페이지를 load를 한 이후, 변경되는 모든 요소들에 대한 작업을 JavaScript에서 처리한다고 할 수 있다.<br/>
+<br/><br/><br/>
+
+
+### <U> 7. HTTP Request 분해하기</U>
+HTTP 응답과 요청에는 크게 3가지가 존재한다.
+1. Status Line
+2. HTTP Header
+3. Message Body
+
+자세한 내용은 [링크](https://www.notion.so/fff65262b1d94fbbb5d5435634647dfd?pvs=4)를 확인하자
 
 
 ### 참고<br/>
 - https://swimjiy.github.io/2019-11-03-How-Web-Works
 - https://www.youtube.com/watch?v=hJHvdBlSxug
+- https://stackoverflow.com/questions/51429617/http-requests-body-vs-param-vs-headers-vs-data
+- https://www.ibm.com/docs/en/cics-ts/5.2?topic=protocol-http-responses
