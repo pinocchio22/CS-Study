@@ -108,7 +108,7 @@ WHERE 고객번호 IN ( SELECT 고객번호
 * 조인 키 컬럼 값이 양쪽 테이블 데이터 집합에서 공통적으로 존재하는 데이터만 조인해서 결과 데이터 집합으로 추출
 
 <br>
-사진
+<img width="176" alt="image" src="https://github.com/pinocchio22/CS-Study/assets/61182499/280b478a-1e5e-45c6-9bb0-63754a544b0a">
 <br>
 
 ## Left Outer join
@@ -116,15 +116,7 @@ WHERE 고객번호 IN ( SELECT 고객번호
 * 조인 키 컬럼 값이 양쪽 테이블 데이터 집합에서 공통적으로 존재하는 데이터와 Left outer join 키워드 왼쪽에 명시된 테이블에만 존재하는 데이터를 결과 데이터 집합으로 추출
 
 <br>
-사진
-<br>
-
-## Full Outer join
-* 합집합 연산 결과
-*  조인 키 컬럼 값이 양쪽 테이블 데이터 집합에서 공통적으로 존재하는 데이터와 한쪽 테이블에만 존재하는 데이터도 모두 결과 데이터 집합으로 추출
-
-<br>
-사진
+<img width="189" alt="image" src="https://github.com/pinocchio22/CS-Study/assets/61182499/386a74da-e167-4564-bc9a-75f5485ad4fa">
 <br>
 
 ## Right Outer join
@@ -132,9 +124,16 @@ WHERE 고객번호 IN ( SELECT 고객번호
 * 차집합의 기준 집합이 Left outer join과 반대
 
 <br>
-사진
+<img width="194" alt="image" src="https://github.com/pinocchio22/CS-Study/assets/61182499/fda5872b-8573-44d1-b273-5cbbd60746c9">
 <br>
 
+## Full Outer join
+* 합집합 연산 결과
+*  조인 키 컬럼 값이 양쪽 테이블 데이터 집합에서 공통적으로 존재하는 데이터와 한쪽 테이블에만 존재하는 데이터도 모두 결과 데이터 집합으로 추출
+
+<br>
+<img width="186" alt="image" src="https://github.com/pinocchio22/CS-Study/assets/61182499/a64ac80f-2f91-41b0-8cc2-809d2f6bac0e">
+<br>
 
 ## Aggregate Functions
 ### Group By
