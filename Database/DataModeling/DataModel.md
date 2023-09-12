@@ -18,7 +18,18 @@ DBMS 란 무엇인가?
 - 데이터 속성 및 데이터에 대한 조건 또는 제약 조건
 - 데이터와 관련된 비즈니스 규칙
 - 대표적인 개념적 데이터 모델로는 **ERD(Entity Relationship Diagram)** 모델이 있다 
-단어에서 의미하는 그대로 Entity = 개체 와 Relationship = 관계 를 중점적으로 표시하는 다이어그램을 구체화 한것을 말함 
+단어에서 의미하는 그대로 Entity = 개체 와 Relationship = 관계 를 중점적으로 표시하는 다이어그램을 구체화 한것을 말함
+
+- **데이터 모델링 장점**
+  1. 데이터베이스 소프트웨어 개발 오류 감소
+  2. 데이터베이스 설계 및 생성 속도와 효율성 촉진
+  3. 조직 전체에서 데이터 문서화 및 시스템 설계의 일관성 조성
+  4. 데이터 엔지니어와 비즈니스 인텔리전스 팀 간의 커뮤니케이션 촉진 <br><br>
+
+- **데이터 모델링의 필요성** <br>
+데이터베이스의 자원은 무한하지 않습니다. 그렇기 때문에 데이터베이스의 자원을 효율적으로 사용하고, 비즈니스 로직이 이해하기 쉽도록 애초에 설계 단계에서 데이터 모델링을 잘해야 합니다. <br>
+비즈니스 로직을 잘 녹여 어떠한 테이블, 컬럼을 생성하고 관계를 어떻게 해야 할지 모두 데이터 모델링의 과정입니다. 이 과정을 잘해야 데이터가 꼬여버리거나 SQL을 비효율적으로 작성하는 문제를 방지할 수 있고 추후에 시스템을 확장시키는데도 용이합니다. <br><br>
+
 
 # ERD 표기법
 1) **개체**(Entity) 
@@ -59,6 +70,7 @@ DBMS 란 무엇인가?
     - 예시)
 
 ![ERD 개체.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/79fc6158-622f-41df-b4d6-d39b49b45424/089a5e92-54cd-4ada-9150-823f2fc9e627/ERD_%E1%84%80%E1%85%A2%E1%84%8E%E1%85%A6.png)
+![ERD 개체](https://github.com/zzangzzangguy/CS-Study/assets/122965360/d0ef435a-eabd-4061-92eb-4c028776127f)
 
 2) 속성 (Attribute)
 
@@ -67,7 +79,8 @@ DBMS 란 무엇인가?
 - 속성 중 "기본키"는 속성에 밑줄을 그어 표기한다.예시) ERD로 표현한 속성
     
     ![ERD 속성.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/79fc6158-622f-41df-b4d6-d39b49b45424/fb31a90b-191c-4c5e-bdac-d021094e2395/ERD_%E1%84%89%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A5%E1%86%BC.png)
-    
+    ![ERD 속성](https://github.com/zzangzzangguy/CS-Study/assets/122965360/63b9cb48-240a-4303-9831-cc23aed0cac0)
+
 
 3) 관계 (Relationship)
 
@@ -76,6 +89,7 @@ DBMS 란 무엇인가?
     
     ![ERD 관계.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/79fc6158-622f-41df-b4d6-d39b49b45424/e1589e28-fb4c-44c5-ad62-bb542d77c1ee/ERD_%E1%84%80%E1%85%AA%E1%86%AB%E1%84%80%E1%85%A8.png)
     
+![ERD 관계](https://github.com/zzangzzangguy/CS-Study/assets/122965360/778cd95d-28f4-432a-bb65-d6d172cc02fd)
 
 4) 관계성 그리기 - 까치발표기법
 
@@ -83,10 +97,12 @@ DBMS 란 무엇인가?
 - 까치발 표기법을 통해 개체(Entity)간 관계성을 표시할 수 있다.
     
     ![까치발 표기법.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/79fc6158-622f-41df-b4d6-d39b49b45424/3e05950d-a31b-49b7-b602-887683eb20b5/%E1%84%81%E1%85%A1%E1%84%8E%E1%85%B5%E1%84%87%E1%85%A1%E1%86%AF_%E1%84%91%E1%85%AD%E1%84%80%E1%85%B5%E1%84%87%E1%85%A5%E1%86%B8.png)
-    
+    ![까치발 표기법](https://github.com/zzangzzangguy/CS-Study/assets/122965360/1f314e81-786f-41d8-8c7a-470bea3884a9)
+
 - 관계성의 예시
 
-![ERD로 표현 관계성.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/79fc6158-622f-41df-b4d6-d39b49b45424/9d268b7a-629a-48b0-afe8-518d8ba3fcf2/ERD%E1%84%85%E1%85%A9_%E1%84%91%E1%85%AD%E1%84%92%E1%85%A7%E1%86%AB_%E1%84%80%E1%85%AA%E1%86%AB%E1%84%80%E1%85%A8%E1%84%89%E1%85%A5%E1%86%BC.png)
+![ERD로 표현 관계성.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/79fc6158-622f-41df-b4d6-d39b49b45424/9d268b7a-629a-48b0-afe8-518d8ba3fcf2/ERD%E1%84%85%E1%85%A9_%E1%84%91%E1%85%AD%E1%84%92%E1%85%A7%E1%86%AB_%E1%84%80%E1%85%AA%E1%86%AB%E1%84%80%E1%85%A8%E1%84%89%E1%85%A5%E1%86%BC.png)![ERD 관계](https://github.com/zzangzzangguy/CS-Study/assets/122965360/a71cead4-1c72-4b1b-a3c1-da2556d115e8)
+
 
 ```jsx
 학생은 교과목을 수강한다
@@ -106,12 +122,14 @@ DBMS 란 무엇인가?
 
 # 개념적 설계
 
-![개념적설계 마무리.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/79fc6158-622f-41df-b4d6-d39b49b45424/fcadbe1d-a991-49c3-bcb7-aac49b0a55f4/%E1%84%80%E1%85%A2%E1%84%82%E1%85%A7%E1%86%B7%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%89%E1%85%A5%E1%86%AF%E1%84%80%E1%85%A8_%E1%84%86%E1%85%A1%E1%84%86%E1%85%AE%E1%84%85%E1%85%B5.png)
+![개념적설계 마무리.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/79fc6158-622f-41df-b4d6-d39b49b45424/fcadbe1d-a991-49c3-bcb7-aac49b0a55f4/%E1%84%80%E1%85%A2%E1%84%82%E1%85%A7%E1%86%B7%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%89%E1%85%A5%E1%86%AF%E1%84%80%E1%85%A8_%E1%84%86%E1%85%A1%E1%84%86%E1%85%AE%E1%84%85%E1%85%B5.png)![개념적설계 마무리](https://github.com/zzangzzangguy/CS-Study/assets/122965360/2ff8e465-b621-46c1-abef-d5fbb82477f7)
+
 
 ### **위와 같이 개체와 속성을 추출하고, 관계를 설정한다음 관계성까지 표현한다면**
 
 ### 개념적 설계 마무리!
 
 개체별 의미 정리
+![개체별 의미](https://github.com/zzangzzangguy/CS-Study/assets/122965360/834b3ba7-df0d-45be-bf4c-86aaa439ba3f)
 
 .md
