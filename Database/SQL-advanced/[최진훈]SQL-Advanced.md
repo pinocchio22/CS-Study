@@ -42,7 +42,7 @@
 
 ## 서브 쿼리의 사용
 * 검색하고자 하는 자료의 형태 및 유무, 자료의 양 등의 조건에 따라 상황에 맞게 사용
-* 잘못 사용할 경우 성능에 나쁜 영향을 줄 수 있으므로 주의를 요함 (예시)
+* 잘못 사용할 경우 성능에 나쁜 영향을 줄 수 있으므로 주의를 요함
 
 ### SELECT - 스칼라 서브쿼리
 * 결과를 알고자하는 Attribute 리스트를 명시
@@ -103,7 +103,37 @@ WHERE 고객번호 IN ( SELECT 고객번호
 # 4. Join 
 * SQL에서 두 개 이상의 Relation을 함께 사용하여 원하는 데이터를 얻는 방법
 
-join의 종류
+## Inner Join
+* 교집합( A ∩ B ) 연산
+* 조인 키 컬럼 값이 양쪽 테이블 데이터 집합에서 공통적으로 존재하는 데이터만 조인해서 결과 데이터 집합으로 추출
+
+<br>
+<img width="176" alt="image" src="https://github.com/pinocchio22/CS-Study/assets/61182499/280b478a-1e5e-45c6-9bb0-63754a544b0a">
+<br>
+
+## Left Outer join
+* 교집합 연산 결과와 차집합 연산 결과를 합친 것( (A ∩ B) ∪ (A - B) )
+* 조인 키 컬럼 값이 양쪽 테이블 데이터 집합에서 공통적으로 존재하는 데이터와 Left outer join 키워드 왼쪽에 명시된 테이블에만 존재하는 데이터를 결과 데이터 집합으로 추출
+
+<br>
+<img width="189" alt="image" src="https://github.com/pinocchio22/CS-Study/assets/61182499/386a74da-e167-4564-bc9a-75f5485ad4fa">
+<br>
+
+## Right Outer join
+* 교집합 연산 결과와 차집합 연산 결과를 합친 것( (A ∩ B) ∪ (A - B) )
+* 차집합의 기준 집합이 Left outer join과 반대
+
+<br>
+<img width="194" alt="image" src="https://github.com/pinocchio22/CS-Study/assets/61182499/fda5872b-8573-44d1-b273-5cbbd60746c9">
+<br>
+
+## Full Outer join
+* 합집합 연산 결과
+*  조인 키 컬럼 값이 양쪽 테이블 데이터 집합에서 공통적으로 존재하는 데이터와 한쪽 테이블에만 존재하는 데이터도 모두 결과 데이터 집합으로 추출
+
+<br>
+<img width="186" alt="image" src="https://github.com/pinocchio22/CS-Study/assets/61182499/a64ac80f-2f91-41b0-8cc2-809d2f6bac0e">
+<br>
 
 ## Aggregate Functions
 ### Group By
